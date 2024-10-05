@@ -1,6 +1,5 @@
 import React from "react";
 import { Product } from "../types";
-import Layout from "@/Component/Layout";
 import ProductList from "@/Component/ProductList";
 
 async function getProducts(): Promise<Product[]> {

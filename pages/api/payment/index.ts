@@ -5,14 +5,8 @@ const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID!,
   key_secret: process.env.RAZORPAY_KEY_SECRET!,
 });
-type ResponseData = {
-  message: string;
-};
 
-export default async function POST(
-  req: NextApiRequest,
-  res: NextApiResponse<any>
-) {
+export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const { amount } = req.body;
 
   const options = {
@@ -22,7 +16,7 @@ export default async function POST(
   };
 
   try {
-    const order: any = await razorpay.orders.create(options);
+    const order = await razorpay.orders.create(options);
     return res.status(200).json({ order });
   } catch (error) {
     console.error("Error creating Razorpay order:", error);

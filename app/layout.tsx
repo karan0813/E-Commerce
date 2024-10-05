@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Provider } from "react-redux";
-import { store } from "@/store/store";
+
 import { Providers } from "./providers";
 import Layout from "@/Component/Layout";
 
